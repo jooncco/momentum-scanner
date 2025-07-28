@@ -6,7 +6,7 @@ html,
   margin: 0;
   padding: 0;
   background: linear-gradient(120deg, #1a1530 0%, #0f0026 100%);
-  font-family: 'Orbitron', 'Segoe UI', 'Arial', sans-serif;
+  font-family: "Orbitron", "Segoe UI", "Arial", sans-serif;
   color: #f8f8ff;
 }
 
@@ -66,7 +66,7 @@ html,
   border-left: 4px solid transparent;
 }
 
-.tickerTable tr[style*='background: #1a1530'] {
+.tickerTable tr[style*="background: #1a1530"] {
   border-left: 4px solid #ff4b6e;
   background: #1a1530 !important;
   box-shadow: 0 0 12px #ff4b6e88;
@@ -83,27 +83,49 @@ html,
 
 .cyberTile {
   background: linear-gradient(135deg, #2d1a4d 60%, #ff4b6e22 100%);
-  border-radius: 18px;
-  box-shadow: 0 0 24px #00f0ff44, 0 0 8px #ff4b6e44;
-  border: 2px solid #00f0ff;
-  padding: 32px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), 0 0 40px rgba(0, 240, 255, 0.1),
+    inset 0 0 20px rgba(255, 75, 110, 0.1);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #f8f8ff;
   font-size: 1.2em;
-  font-family: 'Orbitron', 'Segoe UI', 'Arial', sans-serif;
+  font-family: "Orbitron", "Segoe UI", "Arial", sans-serif;
   text-shadow: 0 0 8px #00f0ff, 0 0 2px #ff4b6e;
-  transition: box-shadow 0.2s, border 0.2s;
+  overflow: hidden;
 }
 
-.cyberTile:hover {
-  box-shadow: 0 0 32px #ff4b6e88, 0 0 16px #00f0ff88;
-  border: 2px solid #ff4b6e;
+.cyberTile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(45deg, #00f0ff, #ff4b6e, #00f0ff);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cyberTile iframe {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
 }
 
 h2 {
-  font-family: 'Orbitron', 'Segoe UI', 'Arial', sans-serif;
+  font-family: "Orbitron", "Segoe UI", "Arial", sans-serif;
   color: #00f0ff;
   letter-spacing: 2px;
   font-size: 2em;
@@ -140,7 +162,7 @@ h2 {
 }
 
 /* Neon glow for selected ticker */
-.tickerTable tr[style*='outline: 2px solid #5a189a'] {
+.tickerTable tr[style*="outline: 2px solid #5a189a"] {
   outline: 2px solid #00f0ff !important;
   box-shadow: 0 0 16px #00f0ff88;
 }
