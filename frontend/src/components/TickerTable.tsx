@@ -1,10 +1,10 @@
 import React from "react";
 import { formatFloat } from "../utils/formatter";
 
-// Dummy data generator for tickers
 export type Ticker = {
   medal: string;
   ticker: string;
+  market: string;
   price: string;
   pctChange: string;
   volPctChange: string;
@@ -28,6 +28,7 @@ export function TickerTable({
         <tr>
           <th>Medal</th>
           <th>Ticker</th>
+          <th>Market</th>
           <th>Price ($)</th>
           <th>Price Change</th>
           <th>Volume Change</th>
@@ -52,6 +53,7 @@ export function TickerTable({
             >
               <td>{t.medal}</td>
               <td>{t.ticker}</td>
+              <td>{t.market}</td>
               <td>{t.price}</td>
               <td
                 style={{

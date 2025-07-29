@@ -3,7 +3,8 @@ import type { Ticker } from "../components/TickerTable";
 export const generateDummyTickers = (): Ticker[] => [
   {
     medal: "🥇",
-    ticker: "BTCUSDT",
+    ticker: "BTC",
+    market: "Binance",
     price: (1000000 + Math.random() * 1000000).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -11,7 +12,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥈",
-    ticker: "ETHUSDT",
+    ticker: "ETH",
+    market: "Bybit",
     price: (2000 + Math.random() * 100).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -19,7 +21,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "BNBUSDT",
+    ticker: "BNB",
+    market: "OKX",
     price: (300 + Math.random() * 20).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -27,7 +30,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "SOLUSDT",
+    ticker: "TOKAMAK",
+    market: "Upbit",
     price: (100 + Math.random() * 10).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -35,7 +39,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "XRPUSDT",
+    ticker: "XRP",
+    market: "Binance",
     price: (0.5 + Math.random() * 0.2).toFixed(4),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -43,7 +48,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "ADAUSDT",
+    ticker: "ADA",
+    market: "Bybit",
     price: (0.3 + Math.random() * 0.1).toFixed(4),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -51,7 +57,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "DOGEUSDT",
+    ticker: "DOGE",
+    market: "OKX",
     price: (0.08 + Math.random() * 0.02).toFixed(4),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -59,7 +66,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "MATICUSDT",
+    ticker: "MAGIC",
+    market: "Binance",
     price: (1 + Math.random() * 0.2).toFixed(4),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -67,7 +75,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "DOTUSDT",
+    ticker: "DOT",
+    market: "Binance",
     price: (5 + Math.random() * 1).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -75,7 +84,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "LTCUSDT",
+    ticker: "LTC",
+    market: "Bybit",
     price: (80 + Math.random() * 10).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -83,7 +93,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "TRXUSDT",
+    ticker: "TRX",
+    market: "OKX",
     price: (0.07 + Math.random() * 0.01).toFixed(4),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -91,7 +102,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "AVAXUSDT",
+    ticker: "AVAX",
+    market: "Bybit",
     price: (15 + Math.random() * 2).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -99,7 +111,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "SHIBUSDT",
+    ticker: "SHIB",
+    market: "Binance",
     price: (0.00001 + Math.random() * 0.000001).toFixed(8),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -107,7 +120,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "UNIUSDT",
+    ticker: "UNI",
+    market: "Bybit",
     price: (6 + Math.random() * 1).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -115,7 +129,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "LINKUSDT",
+    ticker: "LINK",
+    market: "OKX",
     price: (7 + Math.random() * 1).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),
@@ -123,7 +138,8 @@ export const generateDummyTickers = (): Ticker[] => [
   },
   {
     medal: "🥉",
-    ticker: "ATOMUSDT",
+    ticker: "ATOM",
+    market: "Bybit",
     price: (10 + Math.random() * 2).toFixed(2),
     pctChange: (Math.random() * 10 - 5).toFixed(2),
     volPctChange: (Math.random() * 20 - 10).toFixed(2),

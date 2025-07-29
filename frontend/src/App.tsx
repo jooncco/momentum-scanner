@@ -8,12 +8,14 @@ import type { Ticker } from "./components/TickerTable";
 function App() {
   const [tickers, setTickers] = useState<Ticker[]>([]);
   const [selectedTicker, setSelectedTicker] = useState<string>("BTCUSDT");
+  const [selectedMarket, setSelectedMarket] = useState<string>("Binance");
 
   useEffect(() => {
     // Generate initial tickers on mount
     const newTickers = generateDummyTickers();
     setTickers(newTickers);
     setSelectedTicker(newTickers[0]?.ticker || "BTCUSDT");
+    setSelectedMarket(newTickers[0]?.market || "Binance");
   }, []);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ function App() {
       // If the selected ticker is not in the new list, reset to first
       if (!updatedTickers.some((t) => t.ticker === selectedTicker)) {
         setSelectedTicker(updatedTickers[0]?.ticker || "BTCUSDT");
+        setSelectedMarket(updatedTickers[0]?.market || "Binance");
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -40,6 +43,14 @@ function App() {
       document.head.removeChild(link);
     };
   }, []);
+
+  const handleTickerSelect = (ticker: string) => {
+    setSelectedTicker(ticker);
+    const selectedTickerData = tickers.find((t) => t.ticker === ticker);
+    if (selectedTickerData) {
+      setSelectedMarket(selectedTickerData.market);
+    }
+  };
 
   return (
     <div className="App">
@@ -77,7 +88,7 @@ function App() {
               <TickerTable
                 tickers={tickers}
                 selectedTicker={selectedTicker}
-                onSelect={setSelectedTicker}
+                onSelect={handleTickerSelect}
               />
             </div>
           </div>
@@ -96,7 +107,7 @@ function App() {
           }}
         >
           <h2>Charts</h2>
-          <ChartTiles ticker={selectedTicker} />
+          <ChartTiles ticker={selectedTicker} market={selectedMarket} />
         </div>
       </div>
     </div>
