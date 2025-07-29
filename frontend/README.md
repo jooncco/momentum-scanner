@@ -1,6 +1,6 @@
 # Momentum Scanner
 
-![Cryptocurrency Picker](src/assets/img/snapshot.png)
+![Snapshot](src/assets/img/snapshot.png)
 
 ## Overview
 
