@@ -32,18 +32,6 @@ function App() {
     return () => clearInterval(interval);
   }, [selectedTicker, tickers.length]);
 
-  useEffect(() => {
-    // Add Orbitron font
-    const link = document.createElement("link");
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   const handleTickerSelect = (ticker: string) => {
     setSelectedTicker(ticker);
     const selectedTickerData = tickers.find((t) => t.ticker === ticker);

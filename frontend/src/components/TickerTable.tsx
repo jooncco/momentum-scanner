@@ -1,4 +1,3 @@
-import React from "react";
 import { formatFloat } from "../utils/formatter";
 
 export type Ticker = {

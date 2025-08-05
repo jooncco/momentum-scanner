@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron-Regular.woff2") format("woff2"),
+    url("/fonts/Orbitron-Regular.woff") format("woff"),
+    url("/fonts/Orbitron-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
