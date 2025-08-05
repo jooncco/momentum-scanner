@@ -1,0 +1,23 @@
+# Use Node.js 18 for better compatibility
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Remove package-lock.json and node_modules if they exist
+RUN rm -rf package-lock.json node_modules
+
+# Install dependencies with legacy peer deps to avoid conflicts
+RUN npm install --legacy-peer-deps
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Start the development server with proper host binding
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "3000"] 

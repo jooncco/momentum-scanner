@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: momentum_scanner
+      MYSQL_USER: momentum_user
+      MYSQL_PASSWORD: momentum_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/init:/docker-entrypoint-initdb.d
+
+  backend:
+    environment:
+      - DATABASE_URL=mysql://momentum_user:momentum_password@mysql:3306/momentum_scanner
+      - PYTHONPATH=/app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    ports:
+      - "3000:3000"
